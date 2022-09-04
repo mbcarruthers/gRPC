@@ -1,0 +1,27 @@
+body,html {
+    width:100%;
+    height:100%;
+    position:relative;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    color: #F0F8FF;
+    background-color: #318CE7;
+}
+
+.jumbotron {
+    padding:4px;
+    margin-top:8px;
+    position:relative;
+    background-color:lightskyblue;
+    backdrop-filter: blur(12px);
+    display:flex;
+    flex-direction:row-reverse;
+    text-decoration:underline;
+    color:#F0F8FF;
+    font-optical-sizing:auto;
+    font-weight:100;
+
+}
+
