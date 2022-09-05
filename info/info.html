@@ -16,18 +16,71 @@
 </div>
 <hr>
 <div class="container">
-    <p class="lead text-center d-flex">&nbsp;gRPC enables a client application to directly call a method on a server
+    <p class="lead text-center d-flex elem">&nbsp;gRPC enables a client application to directly call a method on a
+        server
         application running on a different machine as if it were a local object, making it easier for you
         to create distributed applications and services.</p>
 
-    <p class="lead text-left d-flex">&nbsp; gRPC is centered around the idea of defining a service and specifying
+    <p class="lead text-left d-flex elem">&nbsp; gRPC is centered around the idea of defining a service and specifying
         methods
         the can be called remotely with their parameters and return types. a GRPC server runs on the
         back end and implements this interface to handle client calls.</p>
-    <img src="img/grpc-1.svg" alt="!work" class="rounded mx-auto d-block">
+    <img src="img/grpc-1.svg" alt="!work" class="rounded mx-auto d-block elem">
 </div>
+<div class="container text-center"><h5>Working with Protocol Buffers</h5></div>
 
-
+<p class="lead text-left d-flex elem"> &nbsp;The first step is to define the structure of the data that will
+    need to be serialized in a proto-file. In proto files, the data is structured as
+    messages, in which a message is a small logical record of info containing a series
+    of name-value pairs called fields</p>
+<p class="lead text-left d-flex elem">
+    &nbsp;Once data structures have been specified the data can be compiled using the protocol buffer compiler
+    `protoc` to generate data access classes in your preferred languages. This compiled code provides simple
+    accessors for each field as well as methods to serialize / parse the whole sture to/from raw bytes.
+</p>
+<div class="container text-center"><h5>Overview</h5></div>
+<div class="container-fluid">
+    <p class="lead text-center d-flex elem">
+        &nbsp;gRPC allowed 4 kinds of service defintions.
+    </p>
+    <div class="container-fluid list-container">
+        <div class="container">
+            <h6 class="text-center">Unary RPC</h6>
+            <p class="lead text-left d-flex elem">
+               &nbsp; Allows the client to send a single request to the server and receive a single response
+                back, similar to a normal function call.
+            </p>
+        </div>
+        <div class="container">
+            <h6 class="text-center">Server Streaming RPC's</h6>
+            <p class="lead text-left d-flex elem">
+                &nbsp;RPC where the client sends a request to the server and gets a stream to read a sequence
+                of messages back. The client reads from the returned stream until there are no more
+                mesages. gRPC guarantees message ordering within an indicidual RPC call.
+            </p>
+        </div>
+        <div class="container">
+            <h6 class="text-center">Client streaming RPC's</h6>
+            <p class="lead text-left d-flex elem">
+                &nbsp;RPC where the client writes a sequence of messages and sends them to the server using a
+                provided stream. Once the client has finished writing the messages, it waits for the
+                server to read them and returns its response. gRPC guarantees message ordering within
+                an individual RPC call.
+            </p>
+        </div>
+        <div class="container">
+            <h6 class="text-center">Bidirectional streaming RPC's</h6>
+            <p class="lead text-left d-flex elem">
+                &nbsp; Streaming RPCs where both sides send a sequence of messages using a read-write
+                stream. The two streams operate independently, so clients and servers can read and write
+                in whatever order they like.
+            </p>
+        </div>
+    </div>
+    <div class="container-fluid text-center m-3">
+        <button class="btn btn-outline-info text-white"><a href="api.html">Next</a></button>
+    </div>
+    <hr>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
