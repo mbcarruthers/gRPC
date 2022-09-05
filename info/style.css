@@ -43,3 +43,7 @@ a:link, a:visited {
 a:hover {
     color:indigo;
 }
+.card {
+    background-color:inherit;
+    color:inherit;
+}

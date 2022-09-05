@@ -14,7 +14,62 @@
 <div class="container text-center jumbotron rounded rounded-left">
     <h3 class="text-center rounded-left display-3 m-1">Using the API</h3>
 </div>
+<hr>
 <div class="container-fluid">
+    <p class="lead text-center d-flex elem">
+        &nbsp; <small>gRPC provides protocol buffer compiler plugins that generate client-side and
+        server-side code. gRPC users typically call these APi's on the client side and implement the
+        corresponding API on the server side.</small>
+    </p>
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-body lead">
+                <h5 class="card-title">Server Side</h5>
+                The server side implements the methods declard by the service and runs a gRPC server
+                to handle client calls. gRPC infrastructure decodes incoming requests , executes
+                service methods and encodes service responses.
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body lead">
+                <h5 class="card-title">Client Side</h5>
+                The client side has a local object known as a <strong>stud</strong> that implements the
+                same methods as the service. The client just calls the methods on the local object,
+                wrapping the parameters for the call in the appropriate protocol buffer message type
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid elem">
+        <h5 class="text-left">
+            Synchronous versus Asynchronous
+        </h5>
+        <p class="lead text-left d-flex">
+            &nbsp; Synchronous RPC calls that block until a response arrives from the server are
+            the closest approximation to the abstraction of a procedure call that RPC aspires to.
+            <br>
+            ...
+            However, on the other hand , networks are inherently asynchronous and in many scenarios
+            it's useful to be able to start RPCs without blocking the current thread.
+            <br>
+            gRPC's APi comes in both synchronous and synchronous flavors in most languages.
+        </p>
+    </div>
+    <div class="container-fluid">
+        <h5 class="text-center">RPC Life Cycle</h5>
+        <p class="lead text-left d-flex elem">
+            &nbsp;The gRPC life cycle lasts from when a client makes a call to a server until the server
+            has responsed and the client has processed the response.
+        </p>
+        <br>
+        <h5 class="text-center">Unary RPC</h5>
+        <p class="lead text-left d-flex elem">
+            &nbsp; Remember, a unary RPC is the most simple type of RPC call. It is when a client sends
+            a single request and gets back a single response.
+            <br>
+            1. The client calls a stub method, the server is notified...
+            <div>Last stopping point for this section is : https://grpc.io/docs/what-is-grpc/core-concepts/</div>
+        </p>
+    </div>
 
 </div>
 
